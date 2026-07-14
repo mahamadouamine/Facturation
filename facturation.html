@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Facturation</title>
-    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/output.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
@@ -58,6 +58,7 @@
               >
                 <div>
                   <a
+                    href="index.html"
                     class="flex items-center gap-2 text-gray-300 hover:text-white"
                   >
                     <i class="bi bi-graph-up"></i> Analyse
@@ -267,7 +268,7 @@
             >
               <p>Factures</p>
             </div>
-            <!-- fenetre article -->
+            <!-- fenetre facture -->
             <div
               class="hidden w-full top-[17.5em] peer-checked:flex flex-col pt-[11em] lg:pt-[1em] xl:pt-[0em] gap-6 absolute left-0 top-0 px-[2em] xl:px-[14em]"
             >
@@ -280,7 +281,6 @@
                 >
                   + Nouvelle facture
                 </a>
-                <!-- le pop-up -->
               </div>
               <div class="flex text-[14px] justify-between gap-8 w-full">
                 <div
@@ -351,10 +351,10 @@
                   <input
                     type="checkbox"
                     name=""
-                    id="article"
+                    id="facfacture"
                     class="hidden peer"
                   />
-                  <label for="article">
+                  <label for="facfacture">
                     <div class="flex justify-between gap-4 w-full">
                       <div class="flex flex-col gap-5">
                         <p class="text-gray-500">Designation</p>
@@ -463,99 +463,180 @@
                       </div>
                     </div>
                   </label>
-                  <!-- pop-up article -->
+                  <!-- off-canvas facture -->
                   <div
-                    class="hidden h-screen z-30 peer-checked:flex peer-checked:fixed flex-col gap-8 p-4 right-0 top-0 absolute bg-white"
+                    class="hidden overflow-y-scroll h-screen z-30 peer-checked:flex peer-checked:fixed flex-col gap-4 p-4 right-0 top-0 absolute bg-white"
                   >
-                    <div class="flex justify-between gap-2 items-cente">
-                      <div class="flex gap-2 font-bold items-cente">
-                        <label for="article">
-                          <i
-                            class="bi bi-x-lg cursor-pointer text-[#60e9ff]"
-                          ></i>
-                        </label>
-                        <p class="">Créer un article</p>
+                    <div class="">
+                      <div class="flex justify-between">
+                        <div>
+                          <p class="text-xs">Document de facturation</p>
+                          <p class="font-bold">D-2023-0112</p>
+                        </div>
+                        <div class="flex items-center gap-6">
+                          <label for="facfacture">
+                            <span
+                              class="flex justify-center items-center text-blue-500 bg-blue-300 w-20 h-6 rounded-2xl"
+                              >Finalisé</span
+                            >
+                          </label>
+                          <div>
+                            <span class="flex text-blue-500 font-bold text-2xl"
+                              >...</span
+                            >
+                            <span class="opacity-0">iuhyg</span>
+                          </div>
+                        </div>
                       </div>
-                      <div
-                        class="flex items-cente px-3 text-white rounde bg-[#0D6FB4]"
-                      >
-                        <p>créer</p>
+                      <div class="text-xs">
+                        <p class="font-bold">Nom du client</p>
+                        <span
+                          >10 000fcfa 10 000 fcfa
+                          <i><i class="bi bi-clock"></i> 13 mars 2023</i>
+                          <i
+                            ><i class="bi bi-calendar-event"></i> 13 mars
+                            2023</i
+                          ></span
+                        >
                       </div>
                     </div>
-                    <div
-                      class="flex flex-col gap-2 border border-[#89e1ff] rounded-lg px-2 pt-4 pb-6"
-                    >
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Designation de l'article *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Designation de l'article"
-                        />
+                    <div class="flex justify-between gap-2 items-cente">
+                      <div
+                        class="flex flex-col items-center gap-2 font-bold w-2/3 items-cente"
+                      >
+                        <p class="text-blue-400">Prévisualisation</p>
+                        <hr class="w-full border-blue-400" />
                       </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Type d'article *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Type d'article"
-                        />
+                      <div class="flex items-center px-3 text-white rounde">
+                        <p class="text-gray-500">
+                          Relation <i class="bi bi-question-circle"></i>
+                        </p>
                       </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Unité de l'article *
-                        </label>
+                    </div>
 
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Unité du mesure du montant heure/prix unitaire"
-                        />
+                    <div class="border-2 border-gray-300 p-4 rounded-lg">
+                      <!-- En-tête -->
+                      <div
+                        class="flex justify-between items-start border-b border-gray-500 pb-2"
+                      >
+                        <img src="assets/logo.png" class="w-20" alt="Logo" />
+
+                        <div class="text-right">
+                          <h1 class="text-xl font-bold text-blue-600">
+                            Facture
+                          </h1>
+                          <p class="font-bold">Nom du client</p>
+                          <p class="text-sm">
+                            Boite postale et ville du client
+                          </p>
+                          <p class="text-sm">Localisation du client</p>
+                        </div>
                       </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Prix unitaire *
-                        </label>
 
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Prix unitaire de l'article"
-                        />
+                      <!-- Prestataire -->
+                      <div class="flex justify-between mt-2 text-sm">
+                        <div>
+                          <h2 class="font-bold text-lg">Nom du prestataire</h2>
+                          <p>Boite postale et ville du prestataire</p>
+                          <p>Localisation du prestataire</p>
+                          <p>Numéro de tel prestataire</p>
+                          <p>Email du prestataire</p>
+                        </div>
+
+                        <div>
+                          <div class="flex gap-2">
+                            <p class="font-bold text-gray-600">N°</p>
+                            <p>000000</p>
+                          </div>
+
+                          <div class="flex gap-2">
+                            <p class="font-bold text-gray-600">Émission</p>
+                            <p>00-00-2025</p>
+                          </div>
+
+                          <div class="flex gap-2">
+                            <p class="font-bold text-gray-600">Validité</p>
+                            <p>00-00-2025</p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Taxe à valeur ajouté *
-                        </label>
 
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="TVA applicable à l'article en pourcentage"
-                        />
-                      </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Description/Notes *
-                        </label>
+                      <!-- Tableau -->
+                      <table class="w-full mt-3 text-xs">
+                        <thead>
+                          <tr class="border-b border-blue-400 text-blue-500">
+                            <th class="text-left py-2">#</th>
+                            <th class="text-left">
+                              Désignation et description
+                            </th>
+                            <th>Unité</th>
+                            <th>Quantité</th>
+                            <th>Prix u.HT</th>
+                            <th>TVA</th>
+                            <th>Montant HT</th>
+                            <th>Montant TTC</th>
+                          </tr>
+                        </thead>
 
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded pt-1 pb-[3em] pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Designation de l'article"
-                        />
+                        <tbody>
+                          <tr>
+                            <td class="flex text-xl pr-2">1</td>
+                            <td class="pt-2">
+                              <p class="font-bold">Désignation</p>
+                              <p>Description de l'article</p>
+                              <p>paragraphe 1</p>
+                              <p>paragraphe 2</p>
+                            </td>
+                            <td>Unité</td>
+                            <td>0</td>
+                            <td>1000</td>
+                            <td>00</td>
+                            <td>00000</td>
+                            <td>00000</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <div class="border-b border-blue-400 mt-2"></div>
+
+                      <!-- Totaux -->
+                      <div class="flex justify-between mt-3 text-sm">
+                        <div>
+                          <p class="font-bold">Délai de paiement</p>
+                          <p>30 jours</p>
+
+                          <p class="font-bold mt-2">Moyen de paiement</p>
+                          <p>Virement bancaire</p>
+                        </div>
+
+                        <div class="w-44">
+                          <div class="flex justify-between">
+                            <p class="font-bold">Total HT</p>
+                            <p>10000</p>
+                          </div>
+
+                          <div class="flex justify-between">
+                            <p class="font-bold">TVA</p>
+                            <p>2000</p>
+                          </div>
+
+                          <div class="flex justify-between">
+                            <p class="font-bold">Total TTC</p>
+                            <p>12000</p>
+                          </div>
+
+                          <div class="flex justify-between">
+                            <p class="font-bold">Acomptes versés</p>
+                            <p>3000</p>
+                          </div>
+
+                          <div
+                            class="flex justify-between bg-blue-500 text-white px-2 py-1 mt-1"
+                          >
+                            <p class="font-bold">Reste à payés</p>
+                            <p>7000</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -583,312 +664,6 @@
             >
               <p>Avoirs</p>
             </div>
-            <div
-              class="hidden w-full top-[17.5em] peer-checked:flex flex-col pt-[11em] lg:pt-[1em] xl:pt-[0em] gap-6 absolute left-0 top-0 px-[2em] xl:px-[14em]"
-            >
-              <!--  -->
-              <div class="flex justify-end w-full">
-                <a
-                  href="acomptesListe.html"
-                  for="article"
-                  class="text-[#2E74A0] cursor-pointer border border-[#2E74A0] px-5 py-1 rounded-lg"
-                >
-                  + Nouvelle acompte
-                </a>
-                <!-- le pop-up -->
-              </div>
-              <div class="flex text-[14px] justify-between gap-8 w-full">
-                <div
-                  class="flex flex-col gap-2 bg-white px-5 w-full py-1 rounded-lg"
-                >
-                  <p>Payé</p>
-                  <div class="relative w-2/3">
-                    <p class="absolute right-7">HT</p>
-                    <p class="text-[1.4em] font-bold">100 000 fcfa</p>
-                  </div>
-                  <p>110 000 cfa</p>
-                </div>
-                <div
-                  class="flex flex-col gap-2 bg-white px-5 w-full py-1 rounded-lg"
-                >
-                  <p>Payé</p>
-                  <div class="relative w-2/3">
-                    <p class="absolute right-7">HT</p>
-                    <p class="text-[1.4em] font-bold">100 000 fcfa</p>
-                  </div>
-                  <p>110 000 cfa</p>
-                </div>
-                <div
-                  class="flex flex-col gap-2 bg-white px-5 w-full py-1 rounded-lg"
-                >
-                  <p>Payé</p>
-                  <div class="relative w-2/3">
-                    <p class="absolute right-7">HT</p>
-                    <p class="text-[1.4em] font-bold">100 000 fcfa</p>
-                  </div>
-                  <p>110 000 cfa</p>
-                </div>
-              </div>
-              <div class="flex text-[14px] justify-between gap-2 w-full">
-                <div class="relative items-cente bg-white w-full">
-                  <i
-                    class="bi bi-calendar absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
-                  ></i>
-
-                  <input
-                    type="datetime"
-                    class="rounded-lg pl-10 pr-3 py-2"
-                    placeholder="filtrer par date"
-                  />
-                </div>
-                <div
-                  class="flex gap-2 bg-white text-gray-400 px-5 w-full py-1 rounded-lg"
-                >
-                  <i class="bi bi-search"></i>
-                  <p>Rechercher des numeros, titre, client...</p>
-                </div>
-                <select
-                  name="periode"
-                  id="periode"
-                  class="bg-white text-gray-400 rounded-lg px-3 w-full py-2"
-                >
-                  <option value="">filtrer par etat</option>
-                  <option value="jour">Aujourd'hui</option>
-                  <option value="semaine">Cette semaine</option>
-                  <option value="mois">Ce mois</option>
-                </select>
-              </div>
-              <!-- tableau facture -->
-              <div class="flex w-full">
-                <div
-                  class="flex flex-col mb-[4em] gap-4 w-full bg-white rounded-lg px-5 py-4"
-                >
-                  <input
-                    type="checkbox"
-                    name=""
-                    id="devis"
-                    class="hidden peer"
-                  />
-                  <label for="devis">
-                    <div class="flex justify-between gap-4 w-full">
-                      <div class="flex flex-col gap-5">
-                        <p class="text-gray-500">Designation</p>
-                        <div>
-                          <p class="text-[12px]">F-2023-0112</p>
-                          <p class="text-[10px] text-[#2E74A0]">Amine</p>
-                          <p class="text-[10px]">BP 10000 Niamey</p>
-                        </div>
-                        <div>
-                          <p class="text-[12px]">F-2023-0112</p>
-                          <p class="text-[10px] text-[#2E74A0]">Amine</p>
-                          <p class="text-[10px]">BP 10000 Niamey</p>
-                        </div>
-                        <div>
-                          <p class="text-[12px]">F-2023-0112</p>
-                          <p class="text-[10px] text-[#2E74A0]">Amine</p>
-                          <p class="text-[10px]">BP 10000 Niamey</p>
-                        </div>
-                        <div>
-                          <p class="text-[12px]">F-2023-0112</p>
-                          <p class="text-[10px] text-[#2E74A0]">Amine</p>
-                          <p class="text-[10px]">BP 10000 Niamey</p>
-                        </div>
-                        <div>
-                          <p class="text-[12px]">F-2023-0112</p>
-                          <p class="text-[10px] text-[#2E74A0]">Amine</p>
-                          <p class="text-[10px]">BP 10000 Niamey</p>
-                        </div>
-                        <div>
-                          <p class="text-[12px]">F-2023-0112</p>
-                          <p class="text-[10px] text-[#2E74A0]">Amine</p>
-                          <p class="text-[10px]">BP 10000 Niamey</p>
-                        </div>
-                      </div>
-                      <div class="flex flex-col gap-11 text-gray-500">
-                        <p class="">Statut</p>
-                        <span
-                          class="flex justify-center w-[5em] rounded-2xl text-[#2E74A0] bg-[#2E74A0]/50"
-                          >Finalisé</span
-                        >
-                        <span
-                          class="flex justify-center w-[5em] rounded-2xl text-[#2E74A0] bg-[#2E74A0]/50"
-                          >Finalisé</span
-                        >
-                        <span
-                          class="flex justify-center w-[5em] rounded-2xl text-[#2E74A0] bg-[#2E74A0]/50"
-                          >Finalisé</span
-                        >
-                        <span
-                          class="flex justify-center w-[5em] rounded-2xl text-[#2E74A0] bg-[#2E74A0]/50"
-                          >Finalisé</span
-                        >
-                        <span
-                          class="flex justify-center w-[5em] rounded-2xl text-[#2E74A0] bg-[#2E74A0]/50"
-                          >Finalisé</span
-                        >
-                        <span
-                          class="flex justify-center w-[5em] rounded-2xl text-[#2E74A0] bg-[#2E74A0]/50"
-                          >Finalisé</span
-                        >
-                      </div>
-                      <div class="flex flex-col gap-11">
-                        <p class="text-gray-500">Montant HT</p>
-                        <p>10 000.00 fcfa</p>
-                        <p>10 000.00 fcfa</p>
-                        <p>10 000.00 fcfa</p>
-                        <p>10 000.00 fcfa</p>
-                        <p>10 000.00 fcfa</p>
-                        <p>10 000.00 fcfa</p>
-                      </div>
-                      <div class="flex flex-col gap-11">
-                        <p class="text-gray-500">Montant TTC</p>
-                        <p>11 500.00 fcfa</p>
-                        <p>11 500.00 fcfa</p>
-                        <p>11 500.00 fcfa</p>
-                        <p>11 500.00 fcfa</p>
-                        <p>11 500.00 fcfa</p>
-                        <p>11 500.00 fcfa</p>
-                      </div>
-                      <div class="flex opacity-0 flex-col gap-5 text-gray-500">
-                        <p class="opacity-0">a</p>
-                        <span class="flex gap-4">
-                          <i class="bi bi-pen-fill"></i>
-                          <i class="bi bi-trash3"></i>
-                        </span>
-                        <span class="flex gap-4">
-                          <i class="bi bi-pen-fill"></i>
-                          <i class="bi bi-trash3"></i>
-                        </span>
-                        <span class="flex gap-4">
-                          <i class="bi bi-pen-fill"></i>
-                          <i class="bi bi-trash3"></i>
-                        </span>
-                        <span class="flex gap-4">
-                          <i class="bi bi-pen-fill"></i>
-                          <i class="bi bi-trash3"></i>
-                        </span>
-                        <span class="flex gap-4">
-                          <i class="bi bi-pen-fill"></i>
-                          <i class="bi bi-trash3"></i>
-                        </span>
-                        <span class="flex gap-4">
-                          <i class="bi bi-pen-fill"></i>
-                          <i class="bi bi-trash3"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </label>
-                  <div
-                    class="hidden h-screen z-30 peer-checked:flex peer-checked:fixed flex-col gap-8 p-4 right-0 top-0 absolute bg-white"
-                  >
-                    <div class="flex justify-between gap-2 items-cente">
-                      <div class="flex gap-2 font-bold items-cente">
-                        <label for="devis">
-                          <i
-                            class="bi bi-x-lg cursor-pointer text-[#60e9ff]"
-                          ></i>
-                        </label>
-                        <p class="">Créer un article</p>
-                      </div>
-                      <div
-                        class="flex items-cente px-3 text-white rounde bg-[#0D6FB4]"
-                      >
-                        <p>créer</p>
-                      </div>
-                    </div>
-                    <div
-                      class="flex flex-col gap-2 border border-[#89e1ff] rounded-lg px-2 pt-4 pb-6"
-                    >
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Designation de l'article *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Designation de l'article"
-                        />
-                      </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Type d'article *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Type d'article"
-                        />
-                      </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Unité de l'article *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Unité du mesure du montant heure/prix unitaire"
-                        />
-                      </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Prix unitaire *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Prix unitaire de l'article"
-                        />
-                      </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Taxe à valeur ajouté *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="TVA applicable à l'article en pourcentage"
-                        />
-                      </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Description/Notes *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded pt-1 pb-[3em] pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Designation de l'article"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="hidden peer-checked:block fixed inset-0 bg-black/50 z-20"
-                  ></div>
-                  <div class="flex w-full justify-end text-gray-500">
-                    <span class="flex gap-6 text-sm">
-                      <span class="flex">
-                        <p>Ligne par page 25</p>
-                        <i class="bi bi-caret-down-fill"></i>
-                      </span>
-                      <p>1-5 de 5</p>
-                      <p>< 1 ></p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </label>
           <label class="">
             <input type="radio" name="facture" class="hidden peer" />
@@ -901,7 +676,7 @@
               class="hidden w-full top-[17.5em] peer-checked:flex flex-col pt-[11em] lg:pt-[1em] xl:pt-[0em] gap-6 absolute left-0 top-0 px-[2em] xl:px-[14em]"
             >
               <!--  -->
-              <div class="flex justify-end w-full">
+              <div class="flex justify-end gap-2 w-full">
                 <a
                   href="devisListe.html"
                   for="devis"
@@ -909,7 +684,13 @@
                 >
                   + Nouvel devis
                 </a>
-
+                <a
+                  href="acomptesListe.html"
+                  for="devis"
+                  class="text-white bg-blue-950 cursor-pointer border border-[#2E74A0] px-5 py-1 rounded-lg"
+                >
+                  + Acomptes
+                </a>
               </div>
               <div class="flex text-[14px] justify-between gap-8 w-full">
                 <div
@@ -980,10 +761,10 @@
                   <input
                     type="checkbox"
                     name=""
-                    id="devis"
+                    id="devdevis"
                     class="hidden peer"
                   />
-                  <label for="devis">
+                  <label for="devdevis">
                     <div class="flex justify-between gap-4 w-full">
                       <div class="flex flex-col gap-5">
                         <p class="text-gray-500">Designation</p>
@@ -1092,99 +873,180 @@
                       </div>
                     </div>
                   </label>
-                  <!-- pop-up devis -->
+                  <!-- off-canvas devis -->
                   <div
-                    class="hidden h-screen z-30 peer-checked:flex peer-checked:fixed flex-col gap-8 p-4 right-0 top-0 absolute bg-white"
+                    class="hidden overflow-y-scroll h-screen z-30 peer-checked:flex peer-checked:fixed flex-col gap-4 p-4 right-0 top-0 absolute bg-white"
                   >
-                    <div class="flex justify-between gap-2 items-cente">
-                      <div class="flex gap-2 font-bold items-cente">
-                        <label for="devis">
-                          <i
-                            class="bi bi-x-lg cursor-pointer text-[#60e9ff]"
-                          ></i>
-                        </label>
-                        <p class="">Créer un article</p>
+                    <div class="">
+                      <div class="flex justify-between">
+                        <div>
+                          <p class="text-xs">Document de facturation</p>
+                          <p class="font-bold">D-2023-0112</p>
+                        </div>
+                        <div class="flex items-center gap-6">
+                          <label for="devdevis">
+                            <span
+                              class="flex justify-center items-center text-blue-500 bg-blue-300 w-20 h-6 rounded-2xl"
+                              >Finalisé</span
+                            >
+                          </label>
+                          <div>
+                            <span class="flex text-blue-500 font-bold text-2xl"
+                              >...</span
+                            >
+                            <span class="opacity-0">iuhyg</span>
+                          </div>
+                        </div>
                       </div>
-                      <div
-                        class="flex items-cente px-3 text-white rounde bg-[#0D6FB4]"
-                      >
-                        <p>créer</p>
+                      <div class="text-xs">
+                        <p class="font-bold">Nom du client</p>
+                        <span
+                          >10 000fcfa 10 000 fcfa
+                          <i><i class="bi bi-clock"></i> 13 mars 2023</i>
+                          <i
+                            ><i class="bi bi-calendar-event"></i> 13 mars
+                            2023</i
+                          ></span
+                        >
                       </div>
                     </div>
-                    <div
-                      class="flex flex-col gap-2 border border-[#89e1ff] rounded-lg px-2 pt-4 pb-6"
-                    >
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Designation de l'article *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Designation de l'article"
-                        />
+                    <div class="flex justify-between gap-2 items-cente">
+                      <div
+                        class="flex flex-col items-center gap-2 font-bold w-2/3 items-cente"
+                      >
+                        <p class="text-blue-400">Prévisualisation</p>
+                        <hr class="w-full border-blue-400" />
                       </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Type d'article *
-                        </label>
-
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Type d'article"
-                        />
+                      <div class="flex items-center px-3 text-white rounde">
+                        <p class="text-gray-500">
+                          Relation <i class="bi bi-question-circle"></i>
+                        </p>
                       </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Unité de l'article *
-                        </label>
+                    </div>
 
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Unité du mesure du montant heure/prix unitaire"
-                        />
+                    <div class="border-2 border-gray-300 p-4 rounded-lg">
+                      <!-- En-tête -->
+                      <div
+                        class="flex justify-between items-start border-b border-gray-500 pb-2"
+                      >
+                        <img src="assets/logo.png" class="w-20" alt="Logo" />
+
+                        <div class="text-right">
+                          <h1 class="text-xl font-bold text-blue-600">
+                            Facture
+                          </h1>
+                          <p class="font-bold">Nom du client</p>
+                          <p class="text-sm">
+                            Boite postale et ville du client
+                          </p>
+                          <p class="text-sm">Localisation du client</p>
+                        </div>
                       </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Prix unitaire *
-                        </label>
 
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Prix unitaire de l'article"
-                        />
+                      <!-- Prestataire -->
+                      <div class="flex justify-between mt-2 text-sm">
+                        <div>
+                          <h2 class="font-bold text-lg">Nom du prestataire</h2>
+                          <p>Boite postale et ville du prestataire</p>
+                          <p>Localisation du prestataire</p>
+                          <p>Numéro de tel prestataire</p>
+                          <p>Email du prestataire</p>
+                        </div>
+
+                        <div>
+                          <div class="flex gap-2">
+                            <p class="font-bold text-gray-600">N°</p>
+                            <p>000000</p>
+                          </div>
+
+                          <div class="flex gap-2">
+                            <p class="font-bold text-gray-600">Émission</p>
+                            <p>00-00-2025</p>
+                          </div>
+
+                          <div class="flex gap-2">
+                            <p class="font-bold text-gray-600">Validité</p>
+                            <p>00-00-2025</p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Taxe à valeur ajouté *
-                        </label>
 
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded py-1 pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="TVA applicable à l'article en pourcentage"
-                        />
-                      </div>
-                      <div>
-                        <label for="nom" class="block font-medium">
-                          Description/Notes *
-                        </label>
+                      <!-- Tableau -->
+                      <table class="w-full mt-3 text-xs">
+                        <thead>
+                          <tr class="border-b border-blue-400 text-blue-500">
+                            <th class="text-left py-2">#</th>
+                            <th class="text-left">
+                              Désignation et description
+                            </th>
+                            <th>Unité</th>
+                            <th>Quantité</th>
+                            <th>Prix u.HT</th>
+                            <th>TVA</th>
+                            <th>Montant HT</th>
+                            <th>Montant TTC</th>
+                          </tr>
+                        </thead>
 
-                        <input
-                          type="text"
-                          id="nom"
-                          class="w-full border border-gray-400 placeholder:text-sm rounded pt-1 pb-[3em] pl-1 pr-[6em] lg:pr-[12em] xl:pr-[22em]"
-                          placeholder="Designation de l'article"
-                        />
+                        <tbody>
+                          <tr>
+                            <td class="flex text-xl pr-2">1</td>
+                            <td class="pt-2">
+                              <p class="font-bold">Désignation</p>
+                              <p>Description de l'article</p>
+                              <p>paragraphe 1</p>
+                              <p>paragraphe 2</p>
+                            </td>
+                            <td>Unité</td>
+                            <td>0</td>
+                            <td>1000</td>
+                            <td>00</td>
+                            <td>00000</td>
+                            <td>00000</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <div class="border-b border-blue-400 mt-2"></div>
+
+                      <!-- Totaux -->
+                      <div class="flex justify-between mt-3 text-sm">
+                        <div>
+                          <p class="font-bold">Délai de paiement</p>
+                          <p>30 jours</p>
+
+                          <p class="font-bold mt-2">Moyen de paiement</p>
+                          <p>Virement bancaire</p>
+                        </div>
+
+                        <div class="w-44">
+                          <div class="flex justify-between">
+                            <p class="font-bold">Total HT</p>
+                            <p>10000</p>
+                          </div>
+
+                          <div class="flex justify-between">
+                            <p class="font-bold">TVA</p>
+                            <p>2000</p>
+                          </div>
+
+                          <div class="flex justify-between">
+                            <p class="font-bold">Total TTC</p>
+                            <p>12000</p>
+                          </div>
+
+                          <div class="flex justify-between">
+                            <p class="font-bold">Acomptes versés</p>
+                            <p>3000</p>
+                          </div>
+
+                          <div
+                            class="flex justify-between bg-blue-500 text-white px-2 py-1 mt-1"
+                          >
+                            <p class="font-bold">Reste à payés</p>
+                            <p>7000</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1212,7 +1074,6 @@
             >
               <p>Bon de commandes</p>
             </div>
-
           </label>
           <label class="">
             <input
@@ -1244,7 +1105,7 @@
                   + Nouveau client
                 </label>
                 <label
-                  for="client"
+                  for=""
                   class="text-white cursor-pointer border bg-[#25365E] px-5 py-1 rounded-lg"
                 >
                   <i class="bi bi-backpack4"></i> Automatiser
@@ -1396,7 +1257,6 @@
             >
               <p>Fournisseurs</p>
             </div>
-
           </label>
           <label class="">
             <input
@@ -1414,7 +1274,7 @@
             <div
               class="hidden w-full top-[17.5em] peer-checked:flex flex-col pt-[11em] lg:pt-[1em] xl:pt-[0em] gap-6 absolute left-0 top-0 px-[2em] xl:px-[14em]"
             >
-            <!-- fenetre article -->
+              <!-- fenetre article -->
               <div class="flex justify-end w-full">
                 <input
                   type="checkbox"
@@ -1527,7 +1387,6 @@
                   + Nouvel article
                 </label>
                 <!-- le pop-up -->
-
               </div>
               <div class="flex w-full">
                 <div
