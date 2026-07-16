@@ -315,22 +315,25 @@
                 </div>
               </div>
               <div class="flex text-[14px] justify-between gap-2 w-full">
-                <div class="relative items-cente bg-white w-full">
-                  <i
-                    class="bi bi-calendar absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
-                  ></i>
-
+                <div class="relative w-full">
                   <input
-                    type="datetime"
-                    class="rounded-lg pl-10 pr-3 py-2"
-                    placeholder="filtrer par date"
+                    id="date"
+                    type="date"
+                    class="w-75 bg-white rounded-lg border border-gray-300 pl-10 pr-4 py-2 outline-none focus:border-green-500"
                   />
+
+
                 </div>
                 <div
-                  class="flex gap-2 bg-white text-gray-400 px-5 w-full py-1 rounded-lg"
+                  class="flex items-center gap-2 bg-white px-5 py-2 w-full rounded-lg border border-transparent focus-within:border-green-500 transition"
                 >
-                  <i class="bi bi-search"></i>
-                  <p>Rechercher des numeros, titre, client...</p>
+                  <i class="bi bi-search text-gray-400"></i>
+
+                  <input
+                    type="text"
+                    placeholder="Rechercher des numeros, titre, client..."
+                    class="w-full bg-transparent border-0 outline-none text-gray-700 placeholder:text-gray-400"
+                  />
                 </div>
                 <select
                   name="periode"
@@ -338,9 +341,9 @@
                   class="bg-white text-gray-400 rounded-lg px-3 w-full py-2"
                 >
                   <option value="">filtrer par etat</option>
-                  <option value="jour">Aujourd'hui</option>
-                  <option value="semaine">Cette semaine</option>
-                  <option value="mois">Ce mois</option>
+                  <option value="jour">Finalisé</option>
+                  <option value="semaine">En cours</option>
+                  <option value="mois">En retard</option>
                 </select>
               </div>
               <!-- tableau facture -->
@@ -640,9 +643,9 @@
                       </div>
                     </div>
                   </div>
-                  <div
+                  <label for="facfacture"
                     class="hidden peer-checked:block fixed inset-0 bg-black/50 z-20"
-                  ></div>
+                  ></label>
                   <div class="flex w-full justify-end text-gray-500">
                     <span class="flex gap-6 text-sm">
                       <span class="flex">
@@ -725,22 +728,25 @@
                 </div>
               </div>
               <div class="flex text-[14px] justify-between gap-2 w-full">
-                <div class="relative items-cente bg-white w-full">
-                  <i
-                    class="bi bi-calendar absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
-                  ></i>
-
+                <div class="relative w-full">
                   <input
-                    type="datetime"
-                    class="rounded-lg pl-10 pr-3 py-2"
-                    placeholder="filtrer par date"
+                    id="date"
+                    type="date"
+                    class="w-75 bg-white rounded-lg border border-gray-300 pl-10 pr-4 py-2 outline-none focus:border-green-500"
                   />
+
+
                 </div>
                 <div
-                  class="flex gap-2 bg-white text-gray-400 px-5 w-full py-1 rounded-lg"
+                  class="flex items-center gap-2 bg-white px-5 py-2 w-full rounded-lg border border-transparent focus-within:border-green-500 transition"
                 >
-                  <i class="bi bi-search"></i>
-                  <p>Rechercher des numeros, titre, client...</p>
+                  <i class="bi bi-search text-gray-400"></i>
+
+                  <input
+                    type="text"
+                    placeholder="Rechercher des numeros, titre, client..."
+                    class="w-full bg-transparent border-0 outline-none text-gray-700 placeholder:text-gray-400"
+                  />
                 </div>
                 <select
                   name="periode"
@@ -748,12 +754,12 @@
                   class="bg-white text-gray-400 rounded-lg px-3 w-full py-2"
                 >
                   <option value="">filtrer par etat</option>
-                  <option value="jour">Aujourd'hui</option>
-                  <option value="semaine">Cette semaine</option>
-                  <option value="mois">Ce mois</option>
+                  <option value="jour">Finalisé</option>
+                  <option value="semaine">En cours</option>
+                  <option value="mois">En retard</option>
                 </select>
               </div>
-              <!-- tableau facture -->
+              <!-- tableau devis -->
               <div class="flex w-full">
                 <div
                   class="flex flex-col mb-[4em] gap-4 w-full bg-white rounded-lg px-5 py-4"
@@ -1050,9 +1056,9 @@
                       </div>
                     </div>
                   </div>
-                  <div
+                  <label for="devdevis"
                     class="hidden peer-checked:block fixed inset-0 bg-black/50 z-20"
-                  ></div>
+                  ></label>
                   <div class="flex w-full justify-end text-gray-500">
                     <span class="flex gap-6 text-sm">
                       <span class="flex">
@@ -1491,5 +1497,6 @@
         </div>
       </div>
     </main>
+
   </body>
 </html>
