@@ -321,8 +321,6 @@
                     type="date"
                     class="w-75 bg-white rounded-lg border border-gray-300 pl-10 pr-4 py-2 outline-none focus:border-green-500"
                   />
-
-
                 </div>
                 <div
                   class="flex items-center gap-2 bg-white px-5 py-2 w-full rounded-lg border border-transparent focus-within:border-green-500 transition"
@@ -643,7 +641,8 @@
                       </div>
                     </div>
                   </div>
-                  <label for="facfacture"
+                  <label
+                    for="facfacture"
                     class="hidden peer-checked:block fixed inset-0 bg-black/50 z-20"
                   ></label>
                   <div class="flex w-full justify-end text-gray-500">
@@ -734,8 +733,6 @@
                     type="date"
                     class="w-75 bg-white rounded-lg border border-gray-300 pl-10 pr-4 py-2 outline-none focus:border-green-500"
                   />
-
-
                 </div>
                 <div
                   class="flex items-center gap-2 bg-white px-5 py-2 w-full rounded-lg border border-transparent focus-within:border-green-500 transition"
@@ -1056,7 +1053,8 @@
                       </div>
                     </div>
                   </div>
-                  <label for="devdevis"
+                  <label
+                    for="devdevis"
                     class="hidden peer-checked:block fixed inset-0 bg-black/50 z-20"
                   ></label>
                   <div class="flex w-full justify-end text-gray-500">
@@ -1187,9 +1185,9 @@
                   </div>
                 </div>
                 <!-- oppacite de modal -->
-                <div
+                <label for="client"
                   class="hidden peer-checked:block fixed inset-0 bg-black/50 z-20"
-                ></div>
+                ></label>
               </div>
               <div class="flex w-full">
                 <div
@@ -1280,7 +1278,7 @@
             <div
               class="hidden w-full top-[17.5em] peer-checked:flex flex-col pt-[11em] lg:pt-[1em] xl:pt-[0em] gap-6 absolute left-0 top-0 px-[2em] xl:px-[14em]"
             >
-              <!-- fenetre article -->
+              <!--Bouton et drawer article -->
               <div class="flex justify-end w-full">
                 <input
                   type="checkbox"
@@ -1288,7 +1286,7 @@
                   id="article-left"
                   class="hidden peer"
                 />
-                <!-- le pop-up-left -->
+                <!-- Drawer article contenu -->
                 <div
                   class="hidden h-screen z-30 peer-checked:flex peer-checked:fixed flex-col gap-8 p-4 right-0 top-0 absolute bg-white"
                 >
@@ -1383,24 +1381,27 @@
                   </div>
                 </div>
 
-                <div
+                <!-- Ombre de drawer article -->
+                <label for="article-left"
                   class="hidden peer-checked:block fixed inset-0 bg-black/50 z-20"
-                ></div>
+                ></label>
+
+                <!-- Bouton drawer article -->
                 <label
                   for="article-left"
                   class="text-[#2E74A0] cursor-pointer border border-[#2E74A0] px-5 py-1 rounded-lg"
                 >
                   + Nouvel article
                 </label>
-                <!-- le pop-up -->
               </div>
+
               <div class="flex w-full">
-                <div
+                <input
+                  type="search"
+                  name=""
+                  placeholder="Rechercher des numeros, titre, client..."
                   class="flex gap-2 bg-white text-gray-400 px-5 py-1 w-[80%] rounded-lg"
-                >
-                  <i class="bi bi-search"></i>
-                  <p>Rechercher des numeros, titre, client...</p>
-                </div>
+                />
               </div>
               <div class="flex w-full">
                 <div
@@ -1454,26 +1455,608 @@
                     </div>
                     <div class="flex flex-col gap-5 text-gray-500">
                       <p class="opacity-0">a</p>
+
+                      <span class="flex gap-4">
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="edit-popup"
+                            class="peer hidden"
+                          />
+
+                          <label for="edit-popup" class="cursor-pointer">
+                            <i class="bi bi-pen-fill"></i>
+                          </label>
+                          <div
+                            class="fixed inset-0 hidden peer-checked:flex items-center justify-center bg-black/50"
+                          >
+                            <div
+                              class="w-[550px] rounded-2xl bg-white shadow-2xl"
+                            >
+                              <div
+                                class="flex items-center justify-between border-b px-4 py-2"
+                              >
+                                <h2 class="text-xl font-semibold">
+                                  Modifier l'article
+                                </h2>
+                              </div>
+
+                              <!-- Contenu -->
+                              <div class="space-y-3 p-4">
+                                <div>
+                                  <p class="mb-1 text-sm text-gray-500">
+                                    Désignation
+                                  </p>
+                                  <input
+                                    type="text"
+                                    value="forfaits carte de visite"
+                                    class="w-full rounded-lg border p-2 outline-none focus:border-cyan-500"
+                                  />
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                  <div>
+                                    <p class="mb-1 text-sm text-gray-500">
+                                      Type
+                                    </p>
+
+                                    <select
+                                      class="w-full rounded-lg border p-2"
+                                    >
+                                      <option>Prestation de service</option>
+                                    </select>
+                                  </div>
+
+                                  <div>
+                                    <p class="mb-1 text-sm text-gray-500">
+                                      Unité
+                                    </p>
+
+                                    <select
+                                      class="w-full rounded-lg border p-2"
+                                    >
+                                      <option>Heure</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <p class="mb-1 text-sm text-gray-500">Prix</p>
+
+                                  <input
+                                    type="number"
+                                    value="11500"
+                                    class="w-full rounded-lg border p-2 outline-none focus:border-cyan-500"
+                                  />
+                                </div>
+                              </div>
+
+                              <div
+                                class="flex justify-end gap-3 border-t px-4 py-2"
+                              >
+                                <label
+                                  for="edit-popup"
+                                  class="cursor-pointer rounded-lg border px-4 py-1"
+                                >
+                                  Annuler
+                                </label>
+
+                                <button
+                                  class="rounded-lg bg-cyan-500 px-4 py-1 text-white"
+                                >
+                                  Enregistrer
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="delet-popup"
+                            class="peer hidden"
+                          />
+
+                          <label for="delet-popup" class="cursor-pointer">
+                            <i class="bi bi-trash3"></i>
+                          </label>
+                          <div
+                            class="fixed inset-0 hidden w-full peer-checked:flex items-center justify-center bg-black/50"
+                          >
+                            <div
+                              class="w-[420px] rounded-2xl bg-white shadow-2xl p-6"
+                            >
+                              <!-- Titre -->
+                              <h2 class="text-center text-2xl font-semibold">
+                                Supprimer l'article
+                              </h2>
+
+                              <!-- Description -->
+                              <p class="mt-2 text-center text-gray-500">
+                                Êtes-vous sûr de vouloir supprimer
+                                <span class="font-semibold text-gray-800">
+                                  "forfaits carte de visite"
+                                </span>
+                                ?
+                              </p>
+
+                              <p class="mt-1 text-center text-sm text-red-500">
+                                Cette action est irréversible.
+                              </p>
+
+                              <!-- Boutons -->
+                              <div class="mt-4 flex justify-end gap-3">
+                                <label
+                                  for="delet-popup"
+                                  class="rounded-lg border border-gray-300 px-4 py-1 font-medium hover:bg-gray-100"
+                                >
+                                  Annuler
+                                </label>
+
+                                <label
+                                  for="delet-popup"
+                                  class="cursor-pointer rounded-lg bg-red-600 px-4 py-1 font-medium text-white hover:bg-red-700"
+                                >
+                                  Supprimer
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </span>
+
+                      <span class="flex gap-4">
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="edit-popup2"
+                            class="peer hidden"
+                          />
+
+                          <label for="edit-popup2" class="cursor-pointer">
+                            <i class="bi bi-pen-fill"></i>
+                          </label>
+                          <div
+                            class="fixed inset-0 hidden peer-checked:flex items-center justify-center bg-black/50"
+                          >
+                            <div
+                              class="w-[550px] rounded-2xl bg-white shadow-2xl"
+                            >
+                              <div
+                                class="flex items-center justify-between border-b px-4 py-2"
+                              >
+                                <h2 class="text-xl font-semibold">
+                                  Modifier l'article
+                                </h2>
+                              </div>
+
+                              <!-- Contenu -->
+                              <div class="space-y-3 p-4">
+                                <div>
+                                  <p class="mb-1 text-sm text-gray-500">
+                                    Désignation
+                                  </p>
+                                  <input
+                                    type="text"
+                                    value="Waké"
+                                    class="w-full rounded-lg border p-2 outline-none focus:border-cyan-500"
+                                  />
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                  <div>
+                                    <p class="mb-1 text-sm text-gray-500">
+                                      Type
+                                    </p>
+
+                                    <select
+                                      class="w-full rounded-lg border p-2"
+                                    >
+                                      <option>Prestation de service</option>
+                                    </select>
+                                  </div>
+
+                                  <div>
+                                    <p class="mb-1 text-sm text-gray-500">
+                                      Unité
+                                    </p>
+
+                                    <select
+                                      class="w-full rounded-lg border p-2"
+                                    >
+                                      <option>Heure</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <p class="mb-1 text-sm text-gray-500">Prix</p>
+
+                                  <input
+                                    type="number"
+                                    value="11500"
+                                    class="w-full rounded-lg border p-2 outline-none focus:border-cyan-500"
+                                  />
+                                </div>
+                              </div>
+
+                              <div
+                                class="flex justify-end gap-3 border-t px-4 py-2"
+                              >
+                                <label
+                                  for="edit-popup2"
+                                  class="cursor-pointer rounded-lg border px-4 py-1"
+                                >
+                                  Annuler
+                                </label>
+
+                                <button
+                                  class="rounded-lg bg-cyan-500 px-4 py-1 text-white"
+                                >
+                                  Enregistrer
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="delet-popup2"
+                            class="peer hidden"
+                          />
+
+                          <label for="delet-popup2" class="cursor-pointer">
+                            <i class="bi bi-trash3"></i>
+                          </label>
+                          <div
+                            class="fixed inset-0 hidden w-full peer-checked:flex items-center justify-center bg-black/50"
+                          >
+                            <div
+                              class="w-[420px] rounded-2xl bg-white shadow-2xl p-6"
+                            >
+                              <!-- Titre -->
+                              <h2 class="text-center text-2xl font-semibold">
+                                Supprimer l'article
+                              </h2>
+
+                              <!-- Description -->
+                              <p class="mt-2 text-center text-gray-500">
+                                Êtes-vous sûr de vouloir supprimer
+                                <span class="font-semibold text-gray-800">
+                                  "Waké"
+                                </span>
+                                ?
+                              </p>
+
+                              <p class="mt-1 text-center text-sm text-red-500">
+                                Cette action est irréversible.
+                              </p>
+
+                              <!-- Boutons -->
+                              <div class="mt-4 flex justify-end gap-3">
+                                <label
+                                  for="delet-popup2"
+                                  class="rounded-lg border border-gray-300 px-4 py-1 font-medium hover:bg-gray-100"
+                                >
+                                  Annuler
+                                </label>
+
+                                <label
+                                  for="delet-popup2"
+                                  class="cursor-pointer rounded-lg bg-red-600 px-4 py-1 font-medium text-white hover:bg-red-700"
+                                >
+                                  Supprimer
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </span>
+
+                      <span class="flex gap-4">
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="edit-popup3"
+                            class="peer hidden"
+                          />
+
+                          <label for="edit-popup3" class="cursor-pointer">
+                            <i class="bi bi-pen-fill"></i>
+                          </label>
+                          <div
+                            class="fixed inset-0 hidden peer-checked:flex items-center justify-center bg-black/50"
+                          >
+                            <div
+                              class="w-[550px] rounded-2xl bg-white shadow-2xl"
+                            >
+                              <div
+                                class="flex items-center justify-between border-b px-4 py-2"
+                              >
+                                <h2 class="text-xl font-semibold">
+                                  Modifier l'article
+                                </h2>
+                              </div>
+
+                              <!-- Contenu -->
+                              <div class="space-y-3 p-4">
+                                <div>
+                                  <p class="mb-1 text-sm text-gray-500">
+                                    Désignation
+                                  </p>
+                                  <input
+                                    type="text"
+                                    value="Forfait main"
+                                    class="w-full rounded-lg border p-2 outline-none focus:border-cyan-500"
+                                  />
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                  <div>
+                                    <p class="mb-1 text-sm text-gray-500">
+                                      Type
+                                    </p>
+
+                                    <select
+                                      class="w-full rounded-lg border p-2"
+                                    >
+                                      <option>Prestation de service</option>
+                                    </select>
+                                  </div>
+
+                                  <div>
+                                    <p class="mb-1 text-sm text-gray-500">
+                                      Unité
+                                    </p>
+
+                                    <select
+                                      class="w-full rounded-lg border p-2"
+                                    >
+                                      <option>Heure</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <p class="mb-1 text-sm text-gray-500">Prix</p>
+
+                                  <input
+                                    type="number"
+                                    value="11500"
+                                    class="w-full rounded-lg border p-2 outline-none focus:border-cyan-500"
+                                  />
+                                </div>
+                              </div>
+
+                              <div
+                                class="flex justify-end gap-3 border-t px-4 py-2"
+                              >
+                                <label
+                                  for="edit-popup3"
+                                  class="cursor-pointer rounded-lg border px-4 py-1"
+                                >
+                                  Annuler
+                                </label>
+
+                                <button
+                                  class="rounded-lg bg-cyan-500 px-4 py-1 text-white"
+                                >
+                                  Enregistrer
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="delet-popup3"
+                            class="peer hidden"
+                          />
+
+                          <label for="delet-popup3" class="cursor-pointer">
+                            <i class="bi bi-trash3"></i>
+                          </label>
+                          <div
+                            class="fixed inset-0 hidden w-full peer-checked:flex items-center justify-center bg-black/50"
+                          >
+                            <div
+                              class="w-[420px] rounded-2xl bg-white shadow-2xl p-6"
+                            >
+                              <!-- Titre -->
+                              <h2 class="text-center text-2xl font-semibold">
+                                Supprimer l'article
+                              </h2>
+
+                              <!-- Description -->
+                              <p class="mt-2 text-center text-gray-500">
+                                Êtes-vous sûr de vouloir supprimer
+                                <span class="font-semibold text-gray-800">
+                                  "Forfait main"
+                                </span>
+                                ?
+                              </p>
+
+                              <p class="mt-1 text-center text-sm text-red-500">
+                                Cette action est irréversible.
+                              </p>
+
+                              <!-- Boutons -->
+                              <div class="mt-4 flex justify-end gap-3">
+                                <label
+                                  for="delet-popup3"
+                                  class="rounded-lg border border-gray-300 px-4 py-1 font-medium hover:bg-gray-100"
+                                >
+                                  Annuler
+                                </label>
+
+                                <label
+                                  for="delet-popup3"
+                                  class="cursor-pointer rounded-lg bg-red-600 px-4 py-1 font-medium text-white hover:bg-red-700"
+                                >
+                                  Supprimer
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </span>
+
+                      <span class="flex gap-4">
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="edit-popup4"
+                            class="peer hidden"
+                          />
+
+                          <label for="edit-popup4" class="cursor-pointer">
+                            <i class="bi bi-pen-fill"></i>
+                          </label>
+                          <div
+                            class="fixed inset-0 hidden peer-checked:flex items-center justify-center bg-black/50"
+                          >
+                            <div
+                              class="w-[550px] rounded-2xl bg-white shadow-2xl"
+                            >
+                              <div
+                                class="flex items-center justify-between border-b px-4 py-2"
+                              >
+                                <h2 class="text-xl font-semibold">
+                                  Modifier l'article
+                                </h2>
+                              </div>
+
+                              <!-- Contenu -->
+                              <div class="space-y-3 p-4">
+                                <div>
+                                  <p class="mb-1 text-sm text-gray-500">
+                                    Désignation
+                                  </p>
+                                  <input
+                                    type="text"
+                                    value="Assistance admin"
+                                    class="w-full rounded-lg border p-2 outline-none focus:border-cyan-500"
+                                  />
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                  <div>
+                                    <p class="mb-1 text-sm text-gray-500">
+                                      Type
+                                    </p>
+
+                                    <select
+                                      class="w-full rounded-lg border p-2"
+                                    >
+                                      <option>Prestation de service</option>
+                                    </select>
+                                  </div>
+
+                                  <div>
+                                    <p class="mb-1 text-sm text-gray-500">
+                                      Unité
+                                    </p>
+
+                                    <select
+                                      class="w-full rounded-lg border p-2"
+                                    >
+                                      <option>Heure</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <p class="mb-1 text-sm text-gray-500">Prix</p>
+
+                                  <input
+                                    type="number"
+                                    value="11500"
+                                    class="w-full rounded-lg border p-2 outline-none focus:border-cyan-500"
+                                  />
+                                </div>
+                              </div>
+
+                              <div
+                                class="flex justify-end gap-3 border-t px-4 py-2"
+                              >
+                                <label
+                                  for="edit-popup4"
+                                  class="cursor-pointer rounded-lg border px-4 py-1"
+                                >
+                                  Annuler
+                                </label>
+
+                                <button
+                                  class="rounded-lg bg-cyan-500 px-4 py-1 text-white"
+                                >
+                                  Enregistrer
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="delet-popup4"
+                            class="peer hidden"
+                          />
+
+                          <label for="delet-popup4" class="cursor-pointer">
+                            <i class="bi bi-trash3"></i>
+                          </label>
+                          <div
+                            class="fixed inset-0 hidden w-full peer-checked:flex items-center justify-center bg-black/50"
+                          >
+                            <div
+                              class="w-[420px] rounded-2xl bg-white shadow-2xl p-6"
+                            >
+                              <!-- Titre -->
+                              <h2 class="text-center text-2xl font-semibold">
+                                Supprimer l'article
+                              </h2>
+
+                              <!-- Description -->
+                              <p class="mt-2 text-center text-gray-500">
+                                Êtes-vous sûr de vouloir supprimer
+                                <span class="font-semibold text-gray-800">
+                                  "Assistance admin"
+                                </span>
+                                ?
+                              </p>
+
+                              <p class="mt-1 text-center text-sm text-red-500">
+                                Cette action est irréversible.
+                              </p>
+
+                              <!-- Boutons -->
+                              <div class="mt-4 flex justify-end gap-3">
+                                <label
+                                  for="delet-popup4"
+                                  class="rounded-lg border border-gray-300 px-4 py-1 font-medium hover:bg-gray-100"
+                                >
+                                  Annuler
+                                </label>
+
+                                <label
+                                  for="delet-popup4"
+                                  class="cursor-pointer rounded-lg bg-red-600 px-4 py-1 font-medium text-white hover:bg-red-700"
+                                >
+                                  Supprimer
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </span>
+
                       <span class="flex gap-4">
                         <i class="bi bi-pen-fill"></i>
                         <i class="bi bi-trash3"></i>
                       </span>
-                      <span class="flex gap-4">
-                        <i class="bi bi-pen-fill"></i>
-                        <i class="bi bi-trash3"></i>
-                      </span>
-                      <span class="flex gap-4">
-                        <i class="bi bi-pen-fill"></i>
-                        <i class="bi bi-trash3"></i>
-                      </span>
-                      <span class="flex gap-4">
-                        <i class="bi bi-pen-fill"></i>
-                        <i class="bi bi-trash3"></i>
-                      </span>
-                      <span class="flex gap-4">
-                        <i class="bi bi-pen-fill"></i>
-                        <i class="bi bi-trash3"></i>
-                      </span>
+
                       <span class="flex gap-4">
                         <i class="bi bi-pen-fill"></i>
                         <i class="bi bi-trash3"></i>
@@ -1497,6 +2080,5 @@
         </div>
       </div>
     </main>
-
   </body>
 </html>

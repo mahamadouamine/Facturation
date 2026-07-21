@@ -32,6 +32,7 @@
         </a>
       </div>
       <div class="flex flex-col justify-between">
+
         <div class="flex justify-between">
           <div class="flex text-[#177ABF]">
             <i class="bi bi-arrow-left-right"></i>
@@ -44,6 +45,7 @@
             <p>configurer</p>
           </div>
         </div>
+        <!-- left et right -->
         <div class="flex gap-2 p-2">
           <!-- la partie gauche de main -->
           <div class="flex flex-col w-[62%] gap-2">
@@ -54,7 +56,7 @@
               <div class="">
                 <h2 class="text-xl text-gray-500">En relation avec</h2>
                 <span class="">
-                  <p class="font-bold">D-2023-0112</p>
+                  <p class="font-bold">F-2023-0112</p>
                   <p class="text-[14px]">Nom du client</p>
                   <span class="flex text-[10px]">
                     <i class="bi bi-clock"></i>
@@ -64,7 +66,7 @@
                   </span>
                 </span>
                 <span class="">
-                  <p class="font-bold">D-2023-0112</p>
+                  <p class="font-bold">F-2023-0112</p>
                   <p class="text-[14px]">Nom du client</p>
                   <span class="flex text-[10px]">
                     <i class="bi bi-clock"></i>
@@ -142,50 +144,57 @@
                   />
                 </div>
                 <div class="flex gap-2">
-                  <div class="flex flex-col w-[70%]">
-                    <label for="nom" class="font-medium"> Designation * </label>
+  <div class="flex-1 min-w-0">
+    <label class="font-medium">Unité</label>
+    <input
+      type="text"
+      class="w-full border border-gray-400 rounded-lg px-3 py-1"
+      placeholder="Unité de la quantité"
+    />
+  </div>
 
-                    <input
-                      type="text"
-                      id="nom"
-                      class="border border-gray-400 rounded-lg px-3 py-1"
-                      placeholder="Designation de l'article"
-                    />
-                  </div>
-                  <div class="flex flex-col w-[70%]">
-                    <label for="nom" class="font-medium"> Designation * </label>
+  <div class="flex-1 min-w-0">
+    <label class="font-medium">Quantité *</label>
+    <input
+      type="text"
+      class="w-full border border-gray-400 rounded-lg px-3 py-1"
+      placeholder="Nombre"
+    />
+  </div>
 
-                    <input
-                      type="text"
-                      id="nom"
-                      class="border border-gray-400 rounded-lg px-3 py-1"
-                      placeholder="Designation de l'article"
-                    />
-                  </div>
-                  <div class="flex flex-col w-[70%]">
-                    <label for="nom" class="font-medium"> Designation * </label>
+  <div class="flex-1 min-w-0">
+    <label class="font-medium">Prix u. HT *</label>
+    <input
+      type="text"
+      class="w-full border border-gray-400 rounded-lg px-3 py-1"
+      placeholder="Désignation de l'article"
+    />
+  </div>
 
-                    <input
-                      type="text"
-                      id="nom"
-                      class="border border-gray-400 rounded-lg px-3 py-1"
-                      placeholder="Designation de l'article"
-                    />
-                  </div>
-                </div>
+  <div class="flex-1 min-w-0">
+    <label class="font-medium">TVA</label>
+    <input
+      type="text"
+      class="w-full border border-gray-400 rounded-lg px-3 py-1"
+      placeholder="Pourcentage de taxe"
+    />
+  </div>
+</div>
               </div>
             </div>
+
+            <!-- Ajouter un article -->
             <div
               class="flex items-cente p-2 bg-white border border-gray-400 border-t-0 rounded-lg text-blue-500"
             >
-              <p>+ Ajouter un article</p>
+              <button class="cursor-pointer">+ Ajouter un article</button>
             </div>
             <div
               class="flex flex-col bg-white p-2 border border-gray-400 border-t-0 rounded-lg border-l-0"
             >
               <p class="text-gray-500">Date d'émission</p>
 
-              <p>Veuillez entrer ujne date d'émission</p>
+              <p>Veuillez entrer une date d'émission</p>
               <input
                       type="text"
                       id="nom"
@@ -256,7 +265,7 @@
                   <p>Ajoutez des pieces jointes avec le documents</p>
                 </div>
                 <button
-                  class="flex items-center px-2 rounded-lg bg-[#177ABF] text-white"
+                  class="cursor-pointer flex items-center px-2 rounded-lg bg-[#177ABF] text-white"
                 >
                   <p>+ Ajouter un document</p>
                 </button>
